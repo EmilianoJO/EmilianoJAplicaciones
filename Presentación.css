@@ -1,0 +1,75 @@
+html, body{
+    margin:0;
+    padding: 0;
+    font-family: serif;
+}
+body{
+    height: 100%;
+}
+header,footer{
+    height: 100px;
+    width: 100%;
+    background-color: rgb(255, 143, 69);
+    color: aliceblue;
+}
+main{
+    max-width: 1024px;
+    margin: 0 auto;
+}
+.container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.container > div{ 
+    flex: 50%;
+    height: 200px;
+    width: 50%;
+    float: left;
+    border: solid 1px white;
+    background-color: antiquewhite;
+    box-sizing: border-box;
+}
+
+.container::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+img{
+    height: 200px;
+    float: left;
+    box-sizing: border-box;
+}
+
+nav{
+    font-size:xx-large;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: bisque;
+}
+p{
+    font-size: larger;
+}
+
+@media only screen and (min-width: 0px) {
+    .container > div {
+        flex: 75%;
+        max-width: 75%;
+    }
+    
+  }
+  
+@media only screen and (min-width: 700px) {
+    .container > div {
+        flex: 50%;
+        max-width: 50%;
+    }
+  } 
+  
+@media only screen and (min-width: 1200px) {
+    .container > div {
+        flex: 25%;
+        max-width: 25%;
+    }
+  }
