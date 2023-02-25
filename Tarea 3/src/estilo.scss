@@ -1,0 +1,71 @@
+@import "mixin";
+@import "variables";
+
+html{
+    @include noMargin;
+    font-family: serif;
+}
+
+body{
+    @extend html ;
+    height: 100%;
+}
+header,footer{
+    height: 100px;
+    width: 100%;
+    background-color: rgb(255, 143, 69);
+    color: $font;
+}
+main{
+    max-width: 1024px;
+    margin: 0 auto;
+}
+.container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    &> div{ 
+        flex: 50%;
+        height: 200px;
+        width: 50%;
+        float: left;
+        border: solid 1px $font;
+        background-color: $fondo;
+        box-sizing: border-box;
+
+        @include phone{
+            flex: 75%;
+            max-width: 75%;
+        }
+        @include tablet{
+            flex: 50%;
+            max-width: 50%;
+        }
+        @include computer{
+            flex: 25%;
+            max-width: 25%;
+        }
+    }
+
+    &::after{
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+img{
+    height: 200px;
+    float: left;
+    box-sizing: border-box;
+}
+
+nav{
+    font-size:xx-large;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: $fondo;
+}
+p{
+    font-size: larger;
+}
+
